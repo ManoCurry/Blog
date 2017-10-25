@@ -7,9 +7,18 @@ const SectionLayout = (props) => (
     {props.children}
     </div>
     <style jsx global>{`
+      .section-layout {
+        position: relative;
+        flex-grow: 1;
+        height: 100vh;
+      }
       .section-wrap {
-        width: 83.33333333%;
-        margin: 0 auto;
+        position: absolute;
+        top: 75px;
+        bottom: 75px;
+        left: 50px;
+        right: 50px;
+        overflow: hidden;
       }
       .section-title {
         margin-bottom: 64px;
