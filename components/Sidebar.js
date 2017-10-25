@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Navigation from './Navigation'
 import Authors from './Authors'
-import ManoLogo from '../static/mano.svg'
+import ManoLogo from '../static/images/mano.svg'
 
 const Sidebar = (props) => (
   <header className='sidebar'>
@@ -22,6 +22,7 @@ const Sidebar = (props) => (
         height: 100vh;
         padding: 50px;
         background-color: #fafbfc;
+        ta
       }
 
       .logo {

@@ -6,7 +6,7 @@ const Authors = () => (
     <h2 lang='en'>$ whoami</h2>
     <ul className='author'>
       <li>
-        <img src='/static/img-author-jy.jpg' />
+        <img src='/static/images/img-author-jy.jpg' />
         <div className='name'>
           <Link href='/about'>
             <a>최준영</a>
@@ -17,7 +17,7 @@ const Authors = () => (
         </div>
       </li>
       <li>
-        <img src='/static/img-author-js.jpg' />
+        <img src='/static/images/img-author-js.jpg' />
         <div className='name'>
           <Link href='/about'>
             <a>노지승</a>

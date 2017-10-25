@@ -17,11 +17,11 @@ const Navigation = () => (
       </Link>
     </li>
     <li>
-      <Link href='/bash-history'>
+      <Link href='/bash_history'>
         <a>
           <span className='title--big'
             lang='en'>
-            .bash-history
+            .bash_history
           </span>
         </a>
       </Link>
