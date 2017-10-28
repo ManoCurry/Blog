@@ -11,19 +11,20 @@ const SectionLayout = (props) => (
         position: relative;
         flex-grow: 1;
         height: 100vh;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         overflow: hidden;
       }
       .section-wrap {
         position: absolute;
-        top: 20px;
-        bottom: 20px;
+        top: 40px;
+        bottom: 40px;
         left: 0;
         padding: 0 150px;
         overflow: auto;
       }
       .section-title {
+        padding-top: 32px;
         margin-bottom: 64px;
         font-size: 53px;
         line-height: 1;

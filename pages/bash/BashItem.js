@@ -1,15 +1,13 @@
 import React from 'react'
 import BashVideo from './BashVideo'
+import moment from 'moment'
 
 const renderBashAssets = (props) => {
   const {
     type,
     date,
-    title,
     images,
-    video,
-    address,
-    venue
+    video
   } = props
 
   switch (props.type) {
@@ -46,44 +44,63 @@ const renderBashAssets = (props) => {
 const BashItem = (props) => {
   const {
     title,
+    date,
     address,
-    venue
+    venue,
+    content
   } = props
+
+  const dateString = date.split('-').join('')
 
   return (
     <li className='bash-item'>
       <article className='bash'>
-        <h3 className='bash-title'>{ title }</h3>
         <div className='bash-assets'>
           {
             renderBashAssets(props)
           }
         </div>
-        <p className='bash-address'>{ address }</p>
-        <p className='bash-venue'>{ venue }</p>
+        <div>
+          <h3 className='bash-title'>
+            {title}
+          </h3>
+          <p className='bash-text'>
+            <span className='date'>{ moment(dateString).format('ll') }</span>
+            <span className='venue'>{ venue }</span>
+            <span className='address'>{ address }</span>
+          </p>
+        </div>
       </article>
       <style jsx>{`
         .bash {
-          margin-bottom: 100px;
+          margin-bottom: 180px;
           letter-spacing: -.02em;
         }
-        .bash-title {
-          margin-bottom: 20px;
-          font-size: 50px;
+
+        .bash-title,
+        .bash-text {
+          font-size: 24px;
+          font-weight: 700;
           line-height: 1.2;
         }
+
+        .bash-text span {
+          font-size: 12px;
+          font-weight: 400;
+          margin-right: 8px;
+          color: #868e96;
+        }
+
+        .date {
+          text-transform: uppercase;
+        }
+
         .bash-assets {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: flex-start;
           width: 100%;
-        }
-        .bash-address,
-        .bash-venue {
-          font-size: 24px;
-          font-weight: 700;
-          line-height: 1.2;
         }
       `}</style>
     </li>

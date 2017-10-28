@@ -11,9 +11,15 @@ const BashList = (props) => (
   <ul className='bash-list'>
     {
       bashData.map(([date, item], index) => {
-        return <BashItem {...item} />
+        return <BashItem {...item} date={date} />
       })
     }
+    <style jsx>{`
+      .bash-list {
+        list-style-type: none;
+        padding: 0;
+      }
+    `}</style>
   </ul>
 )
 
