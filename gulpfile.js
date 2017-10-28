@@ -12,15 +12,19 @@ gulp.task('generate:md', () => {
 })
 
 const gulpPlugin = (transformer) => {
-  return through.obj(transformer)
+  return through.obj((file, encoding, callback) => {
+    const input = file.contents.toString(encoding)
+    const output = template.replace(/\$source/, input)
+
+    file = transformer(file, output)
+
+    callback(null, file)
+  })
 }
 
-const markdownFileProcessor = (file, encoding, callback) => {
-  const input = file.contents.toString(encoding)
-  const output = template.replace(/\$source/, input)
-
+const markdownFileProcessor = (file, output) => {
   file.contents = new Buffer(output)
   file.path = file.path.replace(/\.md$/, '.js')
 
-  callback(null, file)
+  return file
 }
