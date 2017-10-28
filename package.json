@@ -16,8 +16,10 @@
     "next": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "remark": "^8.0.0",
-    "remark-react": "^4.0.1"
+    "rehype-stringify": "^3.0.0",
+    "remark-parse": "^4.0.0",
+    "remark-rehype": "^2.0.1",
+    "unified": "^6.1.5"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
