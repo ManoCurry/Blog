@@ -29,7 +29,7 @@ gulp.task('generate:list', () => {
       const postContent = fs.readFileSync(path.join('data/posts', postPath))
       return {
         ...parseFrontmatter(postContent),
-        id: postPath
+        id: postPath.replace(/\.md$/, '')
       }
     })
     .sort((a, b) => b == null || b.date == null
@@ -58,7 +58,9 @@ const gulpPlugin = (transformer, template) => {
 // devnotesProcessor
 const devnotesProcessor = (file, encoding) => {
   const input = file.contents.toString(encoding)
-  const escapedInput = input.replace(/`/g, '\\`')
+  const escapedInput = input
+    .replace(/`/g, '\\`')
+    .replace(/\${/, '\\${')
   const output = template.replace(/\$source/, escapedInput)
 
   file.contents = new Buffer(output)
