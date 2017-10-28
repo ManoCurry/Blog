@@ -12,10 +12,15 @@ const DevNoteItem = ({
     <Link href={`/devnotes/${id}`}>
       <a>
         <h3>{title}</h3>
-        <p>저자 {author}</p>
+        <p>{author}</p>
       </a>
     </Link>
     <style jsx>{`
+      a {
+        display: block;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
       h3 {
         font-size: 32px;
         line-height: 1.2;
@@ -33,7 +38,6 @@ const DevNotesList = (props) => (
   <AppLayout>
     <h2 className='section-title'>
       Devnotes
-      <span>개발일기</span>
     </h2>
     <ul className='section-list'>
       {
@@ -42,6 +46,7 @@ const DevNotesList = (props) => (
             key={index}
             title={devnote.title}
             id={devnote.id}
+            author={devnote.author}
           />)
         )
       }
