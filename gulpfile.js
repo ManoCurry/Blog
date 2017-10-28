@@ -35,33 +35,3 @@ const markdownFileProcessor = (file, encoding) => {
 
   return file
 }
-
-const bashHistoryPostProcessor = (file, encoding) => {
-  const input = file.contents.toString(encoding)
-  const bashData = createBashData(input)
-  const output = template.replace(/\$source/, bashData)
-
-  file.contents = new Buffer(output)
-  file.path = file.path.replace(/\.json$/, '.js')
-  file.path = file.path.replace(/history/, 'BashHistoryRenderer')
-
-  return file
-}
-
-const createBashData = (json) => {
-  const data = JSON.parse(json)
-
-  return Object.entries(data)
-    .map(([date, history], index) => {
-      const dateInfo = `<h2>${date}</h2> `
-      const imageSources = history.images
-        .reduce((result, path) => {
-          return result += `<img src="${path}" alt="bash ${date}" />`
-        }, '')
-      const venueInfo = `<p>${history.venue} ${history.address}</p>`
-      return dateInfo + imageSources + venueInfo
-    })
-}
-
-
-
