@@ -3,7 +3,7 @@ const path = require('path')
 const gulp = require('gulp')
 const through = require('through2')
 
-const template = fs.readFileSync(`${__dirname}/templates/RemarkedComponent.js`, 'utf8')
+const template = fs.readFileSync(`${__dirname}/templates/BashHistoryTemplate.js`, 'utf8')
 
 gulp.task('generate:md', () => {
   gulp.src([`${__dirname}/data/posts/*.md`])
@@ -32,17 +32,18 @@ const markdownFileProcessor = (file, encoding) => {
   file.contents = new Buffer(output)
   file.path = file.path.replace(/\.md$/, '.js')
 
+
   return file
 }
 
 const bashHistoryPostProcessor = (file, encoding) => {
   const input = file.contents.toString(encoding)
   const bashData = createBashData(input)
-  console.log(bashData)
   const output = template.replace(/\$source/, bashData)
 
   file.contents = new Buffer(output)
-  file.path = file.path.replace(/\.json$/, '.jsx')
+  file.path = file.path.replace(/\.json$/, '.js')
+  file.path = file.path.replace(/history/, 'BashHistoryRenderer')
 
   return file
 }
@@ -52,12 +53,12 @@ const createBashData = (json) => {
 
   return Object.entries(data)
     .map(([date, history], index) => {
-      const dateInfo = `# ${date} `
+      const dateInfo = `<h2>${date}</h2> `
       const imageSources = history.images
         .reduce((result, path) => {
-          return result += `![${date}](${path}) `
+          return result += `<img src="${path}" alt="bash ${date}" />`
         }, '')
-      const venueInfo = `${history.venue} ${history.address} `
+      const venueInfo = `<p>${history.venue} ${history.address}</p>`
       return dateInfo + imageSources + venueInfo
     })
 }
