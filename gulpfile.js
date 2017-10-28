@@ -4,7 +4,7 @@ const gulp = require('gulp')
 const imagemin = require('gulp-imagemin')
 const through = require('through2')
 
-const template = fs.readFileSync(`${__dirname}/templates/BashHistoryTemplate.js`, 'utf8')
+const template = fs.readFileSync(`${__dirname}/templates/DevNotesTemplate.js`, 'utf8')
 
 gulp.task('generate:md', () => {
   gulp.src([`${__dirname}/data/posts/*.md`])
@@ -29,11 +29,17 @@ const gulpPlugin = (transformer, template) => {
 
 const markdownFileProcessor = (file, encoding) => {
   const input = file.contents.toString(encoding)
-  const output = template.replace(/\$source/, input)
+  const escapedInput = input.replace(/`/g, '\\`')
+  const output = template.replace(/\$source/, escapedInput)
 
   file.contents = new Buffer(output)
-  file.path = file.path.replace(/\.md$/, '.js')
-
+  file.path = file.path
+    .replace(/\.md$/, '.js')
+    .replace(/posts/, 'devnotes')
 
   return file
 }
+
+gulp.task('watch', () => {
+  gulp.watch('./data/posts/*.md', ['generate:md'])
+})
