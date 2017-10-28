@@ -2,14 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import AppLayout from '../components/layouts/AppLayout'
 
-
-const DevNote = (props) => (
+const DevNote = ({
+  title,
+  id,
+  author
+}) => (
   <li>
-    <Link as={`/devnotes/${props.id}`}
-      href={`/note?title=${props.title}`}>
+    <Link href={`/devnotes/${id}`}>
       <a>
-        <h3>{props.title}</h3>
-        <p>저자 {props.author}</p>
+        <h3>{title}</h3>
+        <p>저자 {author}</p>
       </a>
     </Link>
     <style jsx>{`
@@ -25,6 +27,7 @@ const DevNote = (props) => (
     `}</style>
   </li>
 )
+
 const DevNotes = (props) => (
   <AppLayout>
     <h2 className='section-title'>
@@ -32,13 +35,10 @@ const DevNotes = (props) => (
       <span>개발일기</span>
     </h2>
     <ul className='section-list'>
-      <DevNote id='react-gulgi'
+      <DevNote id='redux-rises'
         title='Redux 굴기(崛起)'
         author='준영'/>
     </ul>
-    <style jsx>{`
-
-    `}</style>
   </AppLayout>
 )
 

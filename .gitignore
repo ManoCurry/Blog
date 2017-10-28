@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 *.log
 .next/
+
+# generated files
+pages/devnotes/*.js
+pages/bash_history.js
