@@ -15,14 +15,14 @@
     "next": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "remark": "^8.0.0"
+    "remark": "^8.0.0",
+    "remark-react": "^4.0.1"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
     "css-loader": "^0.28.7",
     "gulp": "^3.9.1",
     "isomorphic-unfetch": "^2.0.0",
-    "react-remark": "^1.0.4",
     "through2": "^2.0.3"
   }
 }
