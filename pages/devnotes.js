@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import AppLayout from '../components/layouts/AppLayout'
+import devnotesListData from '../data/generated/devnoteList'
 
-const DevNote = ({
+const DevNoteItem = ({
   title,
   id,
   author
@@ -28,16 +29,22 @@ const DevNote = ({
   </li>
 )
 
-const DevNotes = (props) => (
+const DevNotesList = (props) => (
   <AppLayout>
     <h2 className='section-title'>
       Devnotes
       <span>개발일기</span>
     </h2>
     <ul className='section-list'>
-      <DevNote id='redux-rises'
-        title='Redux 굴기(崛起)'
-        author='준영'/>
+      {
+        devnotesListData.map((devnote, index) => (
+          <DevNoteItem
+            key={index}
+            title={devnote.title}
+            id={devnote.id}
+          />)
+        )
+      }
     </ul>
     <style jsx>{`
       ul,
@@ -48,4 +55,4 @@ const DevNotes = (props) => (
   </AppLayout>
 )
 
-export default DevNotes
+export default DevNotesList
