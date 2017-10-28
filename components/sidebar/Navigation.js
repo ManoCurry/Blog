@@ -28,6 +28,7 @@ const Navigation = () => (
     </li>
     <style jsx>{`
       ul {
+        list-style-type: none;
         width: 100%;
       }
       li {

@@ -39,6 +39,12 @@ const DevNotes = (props) => (
         title='Redux 굴기(崛起)'
         author='준영'/>
     </ul>
+    <style jsx>{`
+      ul,
+      ol {
+        list-style-type: none;
+      }
+    `}</style>
   </AppLayout>
 )
 

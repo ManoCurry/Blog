@@ -36,7 +36,6 @@ const AppLayout = (props) => (
       }
 
       ul, li {
-        list-style-type: none;
         padding: 0;
       }
 
