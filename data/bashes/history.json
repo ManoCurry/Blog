@@ -1,9 +1,9 @@
 {
   "2017-10-24": {
     "images": [
-      "static/2017-10-25/2017-10-25-1.jpg",
-      "static/2017-10-25/2017-10-25-2.jpg",
-      "static/2017-10-25/2017-10-25-3.jpg"
+      "/static/bashes/2017-10-25/2017-10-25-1.jpg",
+      "/static/bashes/2017-10-25/2017-10-25-2.jpg",
+      "/static/bashes/2017-10-25/2017-10-25-3.jpg"
     ],
     "address": "280-32 Nonhyeon 1(il)-dong, Gangnam-gu, Seoul",
     "venue": "투썸플레이스 로스터리 카페"
