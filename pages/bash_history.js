@@ -1,5 +1,6 @@
 import React from 'react'
 import AppLayout from '../components/layouts/AppLayout'
+import BashHistoryRenderer from './bashes/BashHistoryRenderer'
 
 const BashHistory = (props) => {
   return (
@@ -9,6 +10,7 @@ const BashHistory = (props) => {
       </h2>
       <article className='section-layout'>
         <div className='section-wrap'>
+          <BashHistoryRenderer />
         </div>
       </article>
     </AppLayout>
