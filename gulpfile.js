@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const gulp = require('gulp')
+const imagemin = require('gulp-imagemin')
 const through = require('through2')
 
 const template = fs.readFileSync(`${__dirname}/templates/BashHistoryTemplate.js`, 'utf8')
@@ -11,11 +12,12 @@ gulp.task('generate:md', () => {
     .pipe(gulp.dest(`${__dirname}/pages/posts`))
 })
 
-gulp.task('generate:bash', () => {
-  gulp.src([`${__dirname}/data/bashes/history.json`])
-    .pipe(gulpPlugin(bashHistoryPostProcessor, template))
-    .pipe(gulp.dest(`${__dirname}/pages/bashes/`))
+gulp.task('imagemin', () => {
+  gulp.src(['./static/bashes/**/*.jpg'])
+    .pipe(imagemin())
+    .pipe(gulp.dest(`${__dirname}/static/bashes`))
 })
+
 
 const gulpPlugin = (transformer, template) => {
   return through.obj((file, encoding, callback) => {
