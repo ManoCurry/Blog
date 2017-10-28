@@ -57,13 +57,6 @@ const AppLayout = (props) => (
         display: flex;
         overflow: hidden;
       }
-
-      .section-layout {
-        flex-grow: 1;
-        height: 100vh;
-        padding: 75px 50px 50px;
-        overflow: auto;
-      }
     `}</style>
   </div>
 )
