@@ -27,7 +27,10 @@ gulp.task('generate:list', () => {
     })
     .map((postPath) => {
       const postContent = fs.readFileSync(path.join('data/posts', postPath))
-      return parseFrontmatter(postContent)
+      return {
+        ...parseFrontmatter(postContent),
+        id: postPath
+      }
     })
     .sort((a, b) => b == null || b.date == null
       ? -1
