@@ -7,24 +7,60 @@ const template = fs.readFileSync(`${__dirname}/templates/RemarkedComponent.js`, 
 
 gulp.task('generate:md', () => {
   gulp.src([`${__dirname}/data/posts/*.md`])
-    .pipe(gulpPlugin(markdownFileProcessor))
+    .pipe(gulpPlugin(markdownFileProcessor, template))
     .pipe(gulp.dest(`${__dirname}/pages/posts`))
 })
 
-const gulpPlugin = (transformer) => {
-  return through.obj((file, encoding, callback) => {
-    const input = file.contents.toString(encoding)
-    const output = template.replace(/\$source/, input)
+gulp.task('generate:bash', () => {
+  gulp.src([`${__dirname}/data/bashes/history.json`])
+    .pipe(gulpPlugin(bashHistoryPostProcessor, template))
+    .pipe(gulp.dest(`${__dirname}/pages/bashes/`))
+})
 
-    file = transformer(file, output)
+const gulpPlugin = (transformer, template) => {
+  return through.obj((file, encoding, callback) => {
+    file = transformer(file, encoding)
 
     callback(null, file)
   })
 }
 
-const markdownFileProcessor = (file, output) => {
+const markdownFileProcessor = (file, encoding) => {
+  const input = file.contents.toString(encoding)
+  const output = template.replace(/\$source/, input)
+
   file.contents = new Buffer(output)
   file.path = file.path.replace(/\.md$/, '.js')
 
   return file
 }
+
+const bashHistoryPostProcessor = (file, encoding) => {
+  const input = file.contents.toString(encoding)
+  const bashData = createBashData(input)
+  console.log(bashData)
+  const output = template.replace(/\$source/, bashData)
+
+  file.contents = new Buffer(output)
+  file.path = file.path.replace(/\.json$/, '.jsx')
+
+  return file
+}
+
+const createBashData = (json) => {
+  const data = JSON.parse(json)
+
+  return Object.entries(data)
+    .map(([date, history], index) => {
+      const dateInfo = `# ${date} `
+      const imageSources = history.images
+        .reduce((result, path) => {
+          return result += `![${date}](${path}) `
+        }, '')
+      const venueInfo = `${history.venue} ${history.address} `
+      return dateInfo + imageSources + venueInfo
+    })
+}
+
+
+

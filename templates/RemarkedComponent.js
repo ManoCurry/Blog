@@ -1,12 +1,10 @@
 import React from 'react'
-import RemarkReact from 'remark-react'
+import ReactRemark from 'react-remark'
 
-const RemarkedComponent = () => {
-  return (
-    <article class='remarked'>
-      <RemarkReact source={`$source`}/>
-    </article>
-  )
+class RemarkedComponent extends React.Component {
+  render() {
+    return <ReactRemark source={`$source`} />
+  }
 }
 
 export default RemarkedComponent
