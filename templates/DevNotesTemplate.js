@@ -1,5 +1,5 @@
 import React from 'react'
-import MarkdownRenderer from '../../components/MarkdownRenderer'
+import MarkdownRenderer from '../../components/markdown/MarkdownRenderer'
 import AppLayout from '../../components/layouts/AppLayout'
 
 const DevNotesTemplate = () => (
