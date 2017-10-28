@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Navigation from './Navigation'
 import Authors from './Authors'
 import ManoLogo from '../../static/images/mano.svg'
-import sidebarStyle from '../styles/sidebarStyle'
 
 const Sidebar = (props) => (
   <header className='sidebar'>
@@ -16,9 +15,22 @@ const Sidebar = (props) => (
     </h1>
     <Navigation />
     <Authors />
-    {
-      sidebarStyle
-    }
+    <style jsx>{`
+      .sidebar {
+        position: relative;
+        width: 390px;
+        height: 100vh;
+        padding: 50px;
+        background-color: #fafbfc;
+        flex-shrink: 0;
+      }
+
+      .logo {
+        width: 111px;
+        height: auto;
+        margin-bottom: 60px;
+      }
+    `}</style>
   </header>
 )
 

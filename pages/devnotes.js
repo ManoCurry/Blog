@@ -25,6 +25,7 @@ const DevNote = (props) => (
     `}</style>
   </li>
 )
+
 const DevNotes = (props) => (
   <AppLayout>
     <h2 className='section-title'>
@@ -36,9 +37,6 @@ const DevNotes = (props) => (
         title='Redux 굴기(崛起)'
         author='준영'/>
     </ul>
-    <style jsx>{`
-
-    `}</style>
   </AppLayout>
 )
 
