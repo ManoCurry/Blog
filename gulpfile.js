@@ -4,12 +4,36 @@ const gulp = require('gulp')
 const imagemin = require('gulp-imagemin')
 const through = require('through2')
 
-const template = fs.readFileSync(`${__dirname}/templates/DevNotesTemplate.js`, 'utf8')
+// to get yaml data
+const unified = require('unified')
+const remarkParse = require('remark-parse')
+const frontmatter = require('remark-frontmatter')
+const jsYaml = require('js-yaml')
 
+// template for devnotes
+const template = fs.readFileSync(`${__dirname}/templates/DevnotesTemplate.js`, 'utf8')
+
+// gulp tasks
 gulp.task('generate:md', () => {
   gulp.src([`${__dirname}/data/posts/*.md`])
-    .pipe(gulpPlugin(markdownFileProcessor, template))
+    .pipe(gulpPlugin(devnotesProcessor, template))
     .pipe(gulp.dest(`${__dirname}/pages/posts`))
+})
+
+gulp.task('generate:list', () => {
+  const postYamls = fs.readdirSync('./data/posts')
+    .filter((postPath) => {
+      return postPath.match(/\.md$/)
+    })
+    .map((postPath) => {
+      const postContent = fs.readFileSync(path.join('data/posts', postPath))
+      return parseFrontmatter(postContent)
+    })
+    .sort((a, b) => b == null || b.date == null
+      ? -1
+      : b.date.localeCompare(a.date)
+    )
+  fs.writeFileSync('./data/generated/devnoteList.json', JSON.stringify(postYamls))
 })
 
 gulp.task('imagemin', () => {
@@ -19,6 +43,7 @@ gulp.task('imagemin', () => {
 })
 
 
+// gulpPlugin
 const gulpPlugin = (transformer, template) => {
   return through.obj((file, encoding, callback) => {
     file = transformer(file, encoding)
@@ -27,7 +52,8 @@ const gulpPlugin = (transformer, template) => {
   })
 }
 
-const markdownFileProcessor = (file, encoding) => {
+// devnotesProcessor
+const devnotesProcessor = (file, encoding) => {
   const input = file.contents.toString(encoding)
   const escapedInput = input.replace(/`/g, '\\`')
   const output = template.replace(/\$source/, escapedInput)
@@ -40,6 +66,19 @@ const markdownFileProcessor = (file, encoding) => {
   return file
 }
 
+const processor = unified()
+  .use(remarkParse)
+  .use(frontmatter, ['yaml'])
+
+// parseFrontmatter
+const parseFrontmatter = (input) => {
+  const tree = processor.parse(input)
+  if (tree.children && tree.children[0].type === 'yaml') {
+    return jsYaml.load(tree.children[0].value)
+  }
+  return {}
+}
+
 gulp.task('watch', () => {
-  gulp.watch('./data/posts/*.md', ['generate:md'])
+  gulp.watch('./data/posts/*.md', ['generate:md', 'generate:list'])
 })

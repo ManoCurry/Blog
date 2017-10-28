@@ -6,3 +6,5 @@ node_modules/
 # generated files
 pages/devnotes/*.js
 pages/bash_history.js
+data/generated/*
+!data/generated/.gitkeep
