@@ -30,7 +30,7 @@ const AppLayout = (props) => (
       }
 
       [lang='ko'] {
-        font-family: 'Open Sans', 'Spoqa Hans Sans', sans-serif;
+        font-family: 'Apple SD Gothic Neo', 'Spoqa Han Sans', sans-serif;
         font-weight: 700;
         letter-spacing: -.04em;
       }
