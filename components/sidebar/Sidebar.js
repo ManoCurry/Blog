@@ -1,12 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import Navigation from './Navigation'
-import Authors from './Authors'
 import ManoLogo from '../../static/images/mano.svg'
 
 const Sidebar = (props) => (
-  <header className='sidebar'>
-    <h1 className='logo'>
+  <header className='header'>
+    <h1 className='mano'>
       <Link href='/'>
         <a>
           <ManoLogo />
@@ -14,22 +13,27 @@ const Sidebar = (props) => (
       </Link>
     </h1>
     <Navigation />
-    <Authors />
     <style jsx>{`
-      .sidebar {
-        position: relative;
-        width: 390px;
+      .header {
+        width: 50%;
+        max-width: 300px;
         height: 100vh;
-        padding: 50px;
-        background-color: #fafbfc;
-        flex-shrink: 0;
+        z-index: 1000;
+        background: #ffffff;
+      }
+      .mano {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 40px;
+        height: auto;
       }
 
-      .logo {
-        width: 111px;
-        height: auto;
-        margin-bottom: 60px;
+      .mano a {
+        position: relative;
+        width: 50%;
       }
+
     `}</style>
   </header>
 )

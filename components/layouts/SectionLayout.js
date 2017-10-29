@@ -2,12 +2,14 @@ import React from 'react'
 import Link from 'next/link'
 
 const SectionLayout = (props) => (
-  <section className='section-layout'>
-    <div className='section-wrap'>
-      {props.children}
+  <section className='section-container'>
+    <div className='section-layout'>
+      <div className='section-wrap'>
+        {props.children}
+      </div>
     </div>
     <style jsx global>{`
-      .section-layout {
+      .section-container {
         position: relative;
         flex-grow: 1;
         height: 100vh;
@@ -15,14 +17,23 @@ const SectionLayout = (props) => (
         padding-bottom: 40px;
         overflow: hidden;
       }
-      .section-wrap {
+
+      .section-layout {
         position: absolute;
         top: 40px;
         bottom: 40px;
-        left: 0;
-        padding: 0 150px;
+        left: 50%;
         overflow: auto;
+        width: 100%;
+        transform: translateX(-50%);
       }
+
+      .section-wrap {
+        width: 50%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
       .section-title {
         padding-top: 32px;
         margin-bottom: 64px;

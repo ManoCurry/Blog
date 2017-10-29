@@ -1,68 +1,80 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Navigation = () => (
-  <ul>
-    <li>
-      <Link href='/devnotes'>
-        <a>
-          <span className='title--big'
-            lang='en'>
-            Devnotes
-          </span>
-          <span className='title--small'>
-            개발일기
-          </span>
-        </a>
-      </Link>
-    </li>
-    <li>
-      <Link href='/bash_history'>
-        <a>
-          <span className='title--big'
-            lang='en'>
-            .bash_history
-          </span>
-        </a>
-      </Link>
-    </li>
-    <style jsx>{`
-      ul {
-        list-style-type: none;
-        width: 100%;
-      }
-      li {
-        width: 100%;
-        font-weight: 700;
-      }
+class Navigation extends React.Component {
+  render () {
+    return (
+      <ul className='gnb__list'>
+        <li className='gnb__item'>
+          <Link href='/devnotes'>
+            <a className='navlink navlink--big'
+              lang='en'>
+              <span className='on'
+                lang='en'>Devnotes</span>
+              <span>개발일기</span>
+            </a>
+          </Link>
+        </li>
+        <li className='gnb__item'>
+          <Link href='/bash_history'>
+            <a className='navlink'
+              lang='en'>
+              <span className='on'
+                lang='en'>.bash_history</span>
+              <span>일상</span>
+            </a>
+          </Link>
+        </li>
+        <li className='gnb__item gnb__item--last'>
+          <Link href='/about'>
+            <a className='navlink'
+              lang='en'>
+              $ whoami
+            </a>
+          </Link>
+        </li>
+        <style jsx>{`
+          .gnb__list {
+            position: absolute;
+            left: 40px;
+            top: 200px;
+            list-style-type: none;
+            height: calc(100vh - 200px);
+          }
 
-      li:first-of-type .title--big {
-        text-transform: uppercase;
-      }
+          .gnb__item {
+            width: 100%;
+            font-weight: 700;
+          }
 
-      .title--big {
-        font-size: 24px;
-        line-height: 1;
-      }
+          .gnb__item--last {
+            position: absolute;
+            bottom: 40px;
+          }
 
-      .title--small {
-        opacity: .5;
-        line-height: 1;
-      }
+          .navlink--big {
+            text-transform: uppercase;
+          }
 
-      a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 40px;
-      }
+          .navlink {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+          }
 
-      a:hover .title--small,
-      a:focus .title--small {
-        opacity: 1;
-      }
-    `}</style>
-  </ul>
-)
+          .navlink span {
+            line-height: 40px;
+          }
+
+          .navlink span:last-child {
+            font-size: 18px;
+            font-weight: 700;
+          }
+        `}</style>
+      </ul>
+    )
+  }
+}
 
 export default Navigation
