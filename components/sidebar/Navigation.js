@@ -6,7 +6,7 @@ class Navigation extends React.Component {
     return (
       <ul className='gnb__list'>
         <li className='gnb__item'>
-          <Link href='/devnotes'>
+          <Link prefetch href='/devnotes'>
             <a className='navlink navlink--big'
               lang='en'>
               <span className='on'
@@ -16,7 +16,7 @@ class Navigation extends React.Component {
           </Link>
         </li>
         <li className='gnb__item'>
-          <Link href='/bash_history'>
+          <Link prefetch href='/bash_history'>
             <a className='navlink'
               lang='en'>
               <span className='on'
@@ -26,7 +26,7 @@ class Navigation extends React.Component {
           </Link>
         </li>
         <li className='gnb__item gnb__item--last'>
-          <Link href='/about'>
+          <Link prefetch href='/about'>
             <a className='navlink'
               lang='en'>
               $ whoami
