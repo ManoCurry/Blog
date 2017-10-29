@@ -39,7 +39,9 @@ const MarkdownRenderer = ({
       <div dangerouslySetInnerHTML={{__html: renderMarkdown(source)}} />
       <style jsx global>{`
         .markdown {
-          padding: 0 75px;
+          width: 100%;
+          max-width: 590px;
+          margin: 0 auto;
         }
 
         .markdown ul,
@@ -93,15 +95,18 @@ const MarkdownRenderer = ({
         }
 
         .markdown pre {
+          width: 100%;
           margin-bottom: 54px;
         }
 
         .markdown p + pre {
           margin-top: 54px;
+          white-space: pre-wrap;
         }
 
         .markdown pre code {
           display: inline-block;
+          width: 100%;
           font-family: 'Menlo', monospace;
           font-size: 14px;
           line-height: 1.6;
