@@ -10,7 +10,7 @@ const AppLayout = (props) => (
       {props.children}
     </SectionLayout>
     <style jsx global>{`
-      * {
+      *:not(span) {
         margin: 0;
         box-sizing: border-box;
         font-family: 'Helvetica Neue', 'Arial', sans-serif;
