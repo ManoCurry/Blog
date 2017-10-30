@@ -6,15 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=devlopment node app.js",
+    "devnotes": "gulp devnotes",
+    "devnotes:watch": "gulp devnotes:watch",
     "build": "next build && next export",
-    "start": "next start",
+    "start": "hs out",
     "export": "next export"
   },
   "keywords": [],
   "author": "Jiseung Roh <jiseung.roh@gmail.com> (http://rohjs.github.io/)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
     "js-yaml": "^3.10.0",
     "moment": "^2.19.1",
     "next": "^4.1.2",
@@ -30,8 +31,10 @@
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^0.4.0",
     "css-loader": "^0.28.7",
+    "express": "^4.16.2",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.4.0",
+    "http-server": "^0.10.0",
     "isomorphic-unfetch": "^2.0.0"
   }
 }

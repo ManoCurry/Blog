@@ -22,7 +22,7 @@ if (tree.children && tree.children[0].type === 'yaml') {
 return {}
 }
 
-gulp.task('list', () => {
+gulp.task('devnotes', () => {
   const postYamls = fs.readdirSync('./static/posts')
     .filter((postPath) => {
       return postPath.match(/\.md$/)
@@ -47,6 +47,6 @@ gulp.task('imagemin', () => {
     .pipe(gulp.dest(`${__dirname}/static/bashes`))
 })
 
-gulp.task('watch', () => {
+gulp.task('devnotes:watch', () => {
   gulp.watch('./data/posts/*.md', ['generate:list'])
 })
