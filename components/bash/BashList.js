@@ -5,7 +5,7 @@ const BashList = (props) => (
   <ul className='bash-list'>
     {
       props.bashData.map(([date, item], index) => {
-        return <BashItem {...item} date={date} />
+        return <BashItem {...item} date={date} key={date} />
       })
     }
     <style jsx>{`

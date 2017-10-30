@@ -7,7 +7,7 @@ const BashVideo = ({
     <iframe
       src={video}
       className='video'
-      frameborder='0'>
+      frameBorder='0'>
     </iframe>
     <style jsx>{`
       .video-container {
