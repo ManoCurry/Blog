@@ -30,6 +30,7 @@
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.4.0",
     "isomorphic-unfetch": "^2.0.0",
+    "raw-loader": "^0.5.1",
     "through2": "^2.0.3"
   }
 }
