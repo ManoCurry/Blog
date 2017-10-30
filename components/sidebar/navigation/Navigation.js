@@ -7,6 +7,7 @@ class Navigation extends React.Component {
     const {
       pathname
     } = this.props
+    console.log(pathname.indexOf('/devnotes'))
     return (
       <ul className='gnb__list'>
         <li className='gnb__item'>
@@ -14,7 +15,7 @@ class Navigation extends React.Component {
             href='/devnotes'
             >
             <a className={`navlink navlink--big ${
-              pathname === '/devnotes'
+              pathname.indexOf('/devnotes') > -1
                 ? 'active'
                 : 'inactive'
             }`}
@@ -29,9 +30,10 @@ class Navigation extends React.Component {
           <Link prefetch
             href='/bash_history'>
             <a className={`navlink ${
-              pathname === '/bash_history'
+              pathname.indexOf('/bash_history') > -1
                 ? 'active'
-                : 'inactive'}`}
+                : 'inactive'
+              }`}
               lang='en'>
               <span className='english'
                 lang='en'>.bash_history</span>
@@ -43,9 +45,10 @@ class Navigation extends React.Component {
           <Link prefetch
             href='/about'>
             <a className={`navlink ${
-              pathname === '/about'
+              pathname.indexOf('/about') > -1
                 ? 'active'
-                : 'inactive'}`}
+                : 'inactive'
+              }`}
               lang='en'>
               <span className='english'
                 lang='en'>$ whoami</span>
