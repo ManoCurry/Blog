@@ -7,30 +7,7 @@ import rehypeRaw from 'rehype-raw'
 import frontmatter from 'remark-frontmatter'
 import jsYaml from 'js-yaml'
 import NoteLayout from '../layouts/NoteLayout'
-
-const processor = unified()
-  .use(remarkParse)
-  .use(frontmatter, ['yaml'])
-  .use(remarkYamlParse)
-  .use(remarkRehype, {
-    allowDangerousHTML: true
-  })
-  .use(rehypeRaw)
-  .use(rehypeStringify)
-
-// transformer
-const remarkYamlParse = function () {
-  return function (node, file) {
-    if (node.children[0] && node.children[0].type === 'yaml') {
-      file.data.yaml = jsYaml.load(node.children[0].value)
-    }
-  }
-}
-
-const renderMarkdown = (input) => {
-  return processor.processSync(input).toString()
-}
-
+import { renderMarkdown } from '../../lib/markdown'
 
 const MarkdownRenderer = ({
   source
