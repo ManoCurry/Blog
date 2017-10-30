@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next"
+    "dev": "NODE_ENV=devlopment node app.js",
+    "build": "next build && next export",
+    "start": "next start",
+    "export": "next export"
   },
   "keywords": [],
   "author": "Jiseung Roh <jiseung.roh@gmail.com> (http://rohjs.github.io/)",
@@ -29,8 +32,6 @@
     "css-loader": "^0.28.7",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^3.4.0",
-    "isomorphic-unfetch": "^2.0.0",
-    "raw-loader": "^0.5.1",
-    "through2": "^2.0.3"
+    "isomorphic-unfetch": "^2.0.0"
   }
 }
