@@ -1,6 +1,6 @@
 import React from 'react'
 import BashItem from './BashItem'
-import bash from '../../data/bash'
+import bash from '../../data/bash.json'
 
 const bashData = Object.entries(bash)
   .sort((a, b) => {
