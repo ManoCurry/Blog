@@ -16,7 +16,8 @@ const renderBashAssets = (props) => {
     case 'images':
       return images.map((image, index) => {
         return (
-          <div className='bash-asset'>
+          <div key={index}
+            className='bash-asset'>
             <img
               key={index}
               src={image}
