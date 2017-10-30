@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 *.log
 .next/
+out/
 
 # generated files
-generated/
+static/generated/
