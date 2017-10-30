@@ -1,0 +1,69 @@
+import React from 'react'
+import Link from 'next/link'
+import AppLayout from '../../components/layouts/AppLayout'
+import devnotesData from '../../static/generated/devnotes'
+
+const DevNoteItem = ({
+  title,
+  id,
+  author
+}) => (
+  <li>
+    <Link
+      href={{
+        pathname: '/devnotes/show',
+        query: { id },
+      }}
+      as={`/devnotes/${id}`}
+    >
+      <a>
+        <h3>{title}</h3>
+        <p>{author}</p>
+      </a>
+    </Link>
+    <style jsx>{`
+      a {
+        display: block;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 32px;
+        line-height: 1.2;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+    `}</style>
+  </li>
+)
+
+const DevNotesList = (props) => (
+  <AppLayout>
+    <h2 className='section-title'>
+      Devnotes
+    </h2>
+    <ul className='section-list'>
+      {
+        devnotesData.map((devnote, index) => (
+          <DevNoteItem
+            key={index}
+            title={devnote.title}
+            id={devnote.id}
+            author={devnote.author}
+          />)
+        )
+      }
+    </ul>
+    <style jsx>{`
+      ul,
+      ol {
+        list-style-type: none;
+      }
+    `}</style>
+  </AppLayout>
+)
+
+export default DevNotesList
