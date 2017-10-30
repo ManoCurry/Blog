@@ -17,11 +17,13 @@ const DevNoteItem = ({
     </Link>
     <style jsx>{`
       a {
+        position: relative;
         display: block;
-        padding: 20px;
+        padding: 20px 0;
         margin-bottom: 20px;
       }
       h3 {
+        margin-bottom: 10px;
         font-size: 32px;
         line-height: 1.2;
       }

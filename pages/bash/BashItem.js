@@ -79,6 +79,8 @@ const BashItem = (props) => {
 
         .bash-title,
         .bash-text {
+          display: flex;
+          flex-wrap: wrap;
           font-size: 24px;
           font-weight: 700;
           line-height: 1.2;
@@ -92,7 +94,15 @@ const BashItem = (props) => {
           font-size: 12px;
           font-weight: 400;
           margin-right: 8px;
+          margin-bottom: 0;
           color: #868e96;
+        }
+
+        .bash-text span:first-child {
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: 4px;
+          font-weight: 700;
         }
 
         .date {
