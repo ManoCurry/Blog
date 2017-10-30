@@ -7,7 +7,6 @@ class Navigation extends React.Component {
     const {
       pathname
     } = this.props
-    console.log('ㅏㄴ는', pathname)
     return (
       <ul className='gnb__list'>
         <li className='gnb__item'>
