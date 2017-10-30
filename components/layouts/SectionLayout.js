@@ -30,7 +30,7 @@ const SectionLayout = (props) => (
 
       .section-wrap {
         width: 50%;
-        max-width: 600px;
+        max-width: 700px;
         margin: 0 auto;
       }
 

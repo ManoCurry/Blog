@@ -16,7 +16,8 @@ const renderBashAssets = (props) => {
     case 'images':
       return images.map((image, index) => {
         return (
-          <div className='bash-asset'>
+          <div key={index}
+            className='bash-asset'>
             <img
               key={index}
               src={image}
@@ -25,9 +26,9 @@ const renderBashAssets = (props) => {
             <style jsx>{`
               .bash-asset {
                 width: 50%;
-                margin-bottom: 10px;
                 font-size: 0;
               }
+
               img {
                 width: 100%
                 height: auto;
@@ -79,16 +80,30 @@ const BashItem = (props) => {
 
         .bash-title,
         .bash-text {
+          display: flex;
+          flex-wrap: wrap;
           font-size: 24px;
           font-weight: 700;
           line-height: 1.2;
+        }
+
+        .bash-title {
+          margin-top: 10px;
         }
 
         .bash-text span {
           font-size: 12px;
           font-weight: 400;
           margin-right: 8px;
+          margin-bottom: 0;
           color: #868e96;
+        }
+
+        .bash-text span:first-child {
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: 4px;
+          font-weight: 700;
         }
 
         .date {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Navigation from './Navigation'
+import Navigation from './navigation/Navigation'
 import ManoLogo from '../../static/images/mano.svg'
 
 const Sidebar = (props) => (

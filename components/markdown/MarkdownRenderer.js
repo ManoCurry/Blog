@@ -85,7 +85,7 @@ const MarkdownRenderer = ({
           display: inline-block;
           width: 100%;
           font-family: 'Menlo', monospace;
-          font-size: 14px;
+          font-size: 13px;
           line-height: 1.6;
           color: #868e96;
         }
