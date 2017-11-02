@@ -7,7 +7,12 @@ const BashVideo = ({
     <iframe
       src={video}
       className='video'
-      frameBorder='0'>
+      frameBorder='0'
+      width='640'
+      height='400'
+      webkitallowfullscreen='true'
+      mozallowfullscreen='true'
+      allowFullScreen='true'>
     </iframe>
     <style jsx>{`
       .video-container {

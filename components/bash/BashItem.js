@@ -1,6 +1,7 @@
 import React from 'react'
 import BashVideo from './BashVideo'
 import moment from 'moment'
+import { formatDate } from '../../lib/helpers'
 
 const renderBashAssets = (props) => {
   const {
@@ -15,9 +16,15 @@ const renderBashAssets = (props) => {
       return <BashVideo video={video}/>
     case 'images':
       return images.map((image, index) => {
+        const imageWrapperStyle = {}
+        if (typeof image !== 'string') {
+          imageWrapperStyle.width = image[1]
+          image = image[0]
+        }
         return (
           <div key={index}
-            className='bash-asset'>
+            className='bash-asset'
+            style={ imageWrapperStyle }>
             <img
               key={index}
               src={image}
@@ -51,7 +58,7 @@ const BashItem = (props) => {
     content
   } = props
 
-  const dateString = date.split('-').join('')
+  const dateString = formatDate(date)
 
   return (
     <li className='bash-item'>
