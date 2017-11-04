@@ -6,3 +6,4 @@ out/
 
 # generated files
 static/generated/
+!static/generated/.gitkeep

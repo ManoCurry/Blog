@@ -10,7 +10,8 @@
     "devnotes:watch": "gulp devnotes:watch",
     "build": "next build && next export",
     "start": "hs out",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "sh ./scripts/deploy.sh"
   },
   "keywords": [],
   "author": "Jiseung Roh <jiseung.roh@gmail.com> (http://rohjs.github.io/)",
