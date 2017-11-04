@@ -93,5 +93,24 @@
     "video": "https://player.vimeo.com/video/240920590",
     "address": "291 Daehak-ro, Guseong-dong, Yuseong-gu, Daejeon",
     "venue": "카이스트"
+  },
+  "2017-11-03": {
+    "type": "images",
+    "title": "#우아한형제들 #메이님 #배달의민족 #배민라이더스 #사우론 #쉽고명확하며위트있게 ",
+    "images": [
+      [ "/static/bashes/2017-11-03/2017-11-03-05.jpg", "100%"],
+      "/static/bashes/2017-11-03/2017-11-03-04.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-02.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-01.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-03.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-06.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-08.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-11.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-12.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-09.jpg",
+      "/static/bashes/2017-11-03/2017-11-03-15.jpg"
+    ],
+    "address": "2 Wiryeseong-daero, Bangi 2(i)-dong, Songpa-gu, Seoul",
+    "venue": "(주)우아한형제들"
   }
 }
