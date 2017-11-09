@@ -1,7 +1,7 @@
 import React from 'react'
 import BashVideo from './BashVideo'
 import moment from 'moment'
-import { formatDate } from '../../lib/helpers'
+import { getDate } from '../../lib/helpers'
 
 const renderBashAssets = (props) => {
   const {
@@ -58,8 +58,6 @@ const BashItem = (props) => {
     content
   } = props
 
-  const dateString = formatDate(date)
-
   return (
     <li className='bash-item'>
       <article className='bash'>
@@ -73,7 +71,7 @@ const BashItem = (props) => {
             {title}
           </h3>
           <p className='bash-text'>
-            <span className='date'>{ moment(dateString).format('ll') }</span>
+            <span className='date'>{ getDate(date) }</span>
             <span className='venue'>{ venue }</span>
             <span className='address'>{ address }</span>
           </p>
