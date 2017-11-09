@@ -1,14 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import Navigation from './navigation/Navigation'
-import ManoLogo from '../../static/images/mano.svg'
 
 const Sidebar = (props) => (
   <header className='header'>
     <h1 className='mano'>
       <Link href='/'>
         <a>
-          <ManoLogo />
+          <img src='/static/images/mano.svg' alt='마노커리'/>
         </a>
       </Link>
     </h1>
