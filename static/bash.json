@@ -119,5 +119,19 @@
     "video": "https://player.vimeo.com/video/241281240",
     "address": "63-1 Bangi-dong, Songpa-gu, Seoul",
     "venue": "방이동 미소공장"
+  },
+  "2017-11-09": {
+    "type": "images",
+    "title": "#playNode2017 #consoleLog따위는쓰지않는 #강력한디버깅 #독감 #flu #발표랩인줄 #어이아저씨빨라요",
+    "images": [
+      "/static/bashes/2017-11-09/2017-11-09-03.jpg",
+      "/static/bashes/2017-11-09/2017-11-09-02.jpg",
+      "/static/bashes/2017-11-09/2017-11-09-01.jpg",
+      "/static/bashes/2017-11-09/2017-11-09-04.jpg",
+      "/static/bashes/2017-11-09/2017-11-09-05.jpg",
+      "/static/bashes/2017-11-09/2017-11-09-06.jpg"
+    ],
+    "address": "Le Méridien Seoul, 120 Bongeunsa-ro, Yeoksam 1(il)-dong, Gangnam-gu, Seoul",
+    "venue": "르메르디앙서울호텔 플레이노드2017"
   }
 }
