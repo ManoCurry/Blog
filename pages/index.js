@@ -6,7 +6,6 @@ const OWNER = 'ManoCurry'
 const REPO = 'Blog'
 
 
-  // { 0101: 누구, 0102: 누구}
 class Index extends React.Component {
   constructor(props) {
     super(props)
