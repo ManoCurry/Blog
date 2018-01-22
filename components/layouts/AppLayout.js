@@ -1,11 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
-import Sidebar from '../sidebar/Sidebar'
 import SectionLayout from './SectionLayout'
 
 const AppLayout = (props) => (
   <div className='wrap'>
-    <Sidebar/>
+    <header className='header'>
+      <h1>
+        <img
+          src='/static/images/mano.svg'
+          alt='Manolab' />
+      </h1>
+      <p className='meta'>
+        Made by <a href='#'>tosihide</a> and <a href='#'>woohyeon</a>
+      </p>
+    </header>
     <SectionLayout>
       {props.children}
     </SectionLayout>
@@ -65,6 +73,35 @@ const AppLayout = (props) => (
         height: 1px;
         overflow: hidden;
         visibility: hidden;
+      }
+
+      .header {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items:s center;
+        height: 64px;
+      }
+
+      .header img {
+        width: auto;
+        height: 100%;
+      }
+
+      .header p {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        font-size: 12px;
+        line-height: 1;
+        color: #c1c7cd;
+        transform: translateY(-50%)
+      }
+    
+      .header a {
+        font-style: normal;
+        color: #9ba8b7;
       }
     `}</style>
   </div>
