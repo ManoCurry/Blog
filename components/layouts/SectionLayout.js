@@ -13,23 +13,18 @@ const SectionLayout = (props) => (
         position: relative;
         flex-grow: 1;
         height: 100vh;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 32px;
+        padding-bottom: 32px;
         overflow: hidden;
       }
 
       .section-layout {
-        position: absolute;
-        top: 40px;
-        bottom: 40px;
-        left: 50%;
-        overflow: auto;
         width: 100%;
-        transform: translateX(-50%);
+        height: 100%;
+        overflow: auto;
       }
 
       .section-wrap {
-        width: 50%;
         max-width: 700px;
         margin: 0 auto;
       }
@@ -47,6 +42,16 @@ const SectionLayout = (props) => (
         margin-left: 16px;
         opacity: .5;
         letter-spacing: -.025em;
+      }
+
+      @media screen and (max-width: 540px) {
+        .section-container {
+          padding-bottom: 45px;
+        }
+        .section-wrap {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
       }
       `}
     </style>

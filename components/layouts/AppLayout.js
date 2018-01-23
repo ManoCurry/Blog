@@ -114,6 +114,13 @@ const AppLayout = (props) => (
         height: 100%;
       }
 
+      .header h1 img {
+        position: relative;
+        bottom: 7px;
+        width: auto;
+        height: 120%;
+      }
+
       .header p {
         position: absolute;
         top: 50%;
@@ -126,7 +133,20 @@ const AppLayout = (props) => (
     
       .header span,
       .header a {
-        margin-left: 3.5px;
+        display: inline-block;
+        margin-left: 5px;
+      }
+
+      @media screen and (max-width: 540px) {
+        .header .meta {
+          position: fixed;
+          top: initial;
+          bottom: -10px;
+          left: 50%;
+          right: initial;
+          transform: translateX(-50%);
+          white-space: nowrap;
+        }
       }
     `}</style>
   </div>
