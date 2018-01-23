@@ -3,6 +3,7 @@ layout: post
 title: Redux 굴기(崛起)
 date: 2017-09-10 12:00:00 +0900
 tags: [redux, typescript]
+brief: Redux 사용에 있어서 아쉬웠던 점들과 그걸 고쳐나간 경험을 써보려 한다. 솔직히, Redux는 MobX에 비해 부족한 점이 많다.
 ---
 
 <h1>
