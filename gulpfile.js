@@ -15,11 +15,11 @@ const processor = unified()
 
 // parseFrontmatter
 const parseFrontmatter = (input) => {
-const tree = processor.parse(input)
-if (tree.children && tree.children[0].type === 'yaml') {
-  return jsYaml.load(tree.children[0].value)
-}
-return {}
+  const tree = processor.parse(input)
+  if (tree.children && tree.children[0].type === 'yaml') {
+    return jsYaml.load(tree.children[0].value)
+  }
+  return {}
 }
 
 gulp.task('devnotes', () => {
