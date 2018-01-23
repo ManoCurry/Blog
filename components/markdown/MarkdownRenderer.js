@@ -6,7 +6,6 @@ import rehypeStringify from 'rehype-stringify'
 import rehypeRaw from 'rehype-raw'
 import frontmatter from 'remark-frontmatter'
 import jsYaml from 'js-yaml'
-import NoteLayout from '../layouts/NoteLayout'
 import { renderMarkdown } from '../../lib/markdown'
 
 const MarkdownRenderer = ({
