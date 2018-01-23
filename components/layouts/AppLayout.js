@@ -11,7 +11,30 @@ const AppLayout = (props) => (
           alt='Manolab' />
       </h1>
       <p className='meta'>
-        Made by <a href='#'>tosihide</a> and <a href='#'>woohyeon</a>
+        <span>
+          <img
+            src='/static/images/made-by.svg'
+            alt='Made by'
+          />
+        </span>
+        <a href='https://github.com/rokt33r'>
+          <img
+            src='/static/images/toshihide.svg'
+            alt='toshihide'
+          />
+        </a>
+        <span>
+          <img 
+            src='/static/images/and.svg'
+            alt='and'
+          />
+        </span>
+        <a href='https://github.com/rohjs'>
+          <img
+            src='/static/images/woohyeon.svg'
+            alt='woohyeon'
+          />
+        </a>
       </p>
     </header>
     <SectionLayout>
@@ -101,9 +124,9 @@ const AppLayout = (props) => (
         transform: translateY(-50%)
       }
     
+      .header span,
       .header a {
-        font-style: normal;
-        color: #9ba8b7;
+        margin-left: 3.5px;
       }
     `}</style>
   </div>
